@@ -1,0 +1,16 @@
+node {
+     agent {
+            label 'ECSAgent'
+
+            stage("Git Clone"){
+
+               git "https://github.com/mdeeps18/Jenkins.git"
+               echo 'Running on Stage #0'
+            }
+          
+        stage(ECSbuild){
+               build 'Declarative pipeline'
+               echo 'Running on Stage #1'
+            }
+        }
+}
